@@ -1,0 +1,87 @@
+<div class="container">
+    <h1 class="mt-5">Create competences</h1>
+    <form
+      class="mt-5"
+      (ngSubmit)="myForm.valid && onSubmit()"
+      [formGroup]="createCompetencesForm"
+      #myForm="ngForm"
+      >
+      
+      <div class="form-group">
+        <label for="type">Choose your type</label>
+        <select class="form-select mt-2" formControlName="type" id="type">
+          <option value="front end">font end</option>
+          <option value="back end">back end</option>
+          <option value="autres">autres</option>
+        </select>
+        <div *ngIf="myForm.submitted && createCompetencesForm.controls.type.errors">
+          <div
+            *ngIf="createCompetencesForm.controls.type.errors.required"
+            class="text-danger">
+            Le type est requis
+          </div>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <input
+          class="form-control"
+          placeholder="name"
+          formControlName="name"
+          type="text"
+        />
+        <div *ngIf="myForm.submitted && createCompetencesForm.controls.name.errors">
+          <div
+            *ngIf="createCompetencesForm.controls.name.errors.required"
+            class="text-danger"
+          >
+            Le champs name est requis
+          </div>
+          <div
+            *ngIf="createCompetencesForm.controls.name.errors.minlength"
+            class="text-danger"
+          >
+            Le champs name doit avoir 3 caractères minimum
+          </div>
+          <div
+            *ngIf="createCompetencesForm.controls.name.errors.maxlength"
+            class="text-danger"
+          >
+            Le champs name doit avoir 15 caractères maximum
+          </div>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <input
+          class="form-control"
+          placeholder="description"
+          formControlName="description"
+          type="text"
+        />
+        <div *ngIf="myForm.submitted && createCompetencesForm.controls.description.errors">
+          <div
+            *ngIf="createCompetencesForm.controls.description.errors.required"
+            class="text-danger"
+          >
+            Le champs description est requis
+          </div>
+          <div
+            *ngIf="createCompetencesForm.controls.description.errors.minlength"
+            class="text-danger"
+          >
+            Le champs description doit avoir 3 caractères minimum
+          </div>
+          <div
+            *ngIf="createCompetencesForm.controls.description.errors.maxlength"
+            class="text-danger"
+          >
+            Le champs description doit avoir 15 caractères maximum
+          </div>
+        </div>
+      </div>
+    
+      <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success">créer</button>
+      </div>
+    </form>
+  </div>
+  
