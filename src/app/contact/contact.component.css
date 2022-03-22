@@ -1,0 +1,21 @@
+
+
+.main{
+
+    background-color:  #CDBA97ba;
+        
+        height: 9rem;
+        color: rgb(63, 61, 61);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+     h1{
+         font-family: Roboto, sans-serif;
+         font-size: 40px;
+     }
+     #btn{
+    background-color:  #CDBA97ba;
+    
+         color:rgb(63, 61, 61);
+     }

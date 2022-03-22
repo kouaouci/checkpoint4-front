@@ -11,7 +11,7 @@ import { ProjetsComponent } from './projets/projets.component';
 const routes: Routes = [
 {
   path:'',
-  redirectTo: '/',
+  redirectTo: 'home',
   pathMatch: 'full',
 
 },
@@ -20,7 +20,7 @@ const routes: Routes = [
   component: HomeComponent,
 },
 {
-path: 'competencesCrud',
+path: 'competences-crud',
 component: CompetencesCrudComponent
 },
 {
@@ -48,6 +48,10 @@ component: CompetencesCrudComponent,
 {
   path: 'footer',
   component: FooterComponent
+},
+{
+  path:'**',
+  component: HomeComponent
 }
 
 

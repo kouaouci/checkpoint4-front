@@ -40,7 +40,14 @@ export class CompetencesCrudComponent implements OnInit {
     this.formData.append('type', this.createCompetencesForm.value.type);
     this.formData.append('name', this.createCompetencesForm.value.name);
     this.formData.append('description', this.createCompetencesForm.value.description);
-    this.competencesService.postCompetences(this.formData);
+    this.competencesService.postCompetences(this.formData).subscribe({
+      next: ()=>{
+     alert('la competences est bien créé')
+      },
+      error :(error) =>{
+     alert('error')
+      }
+    });
   }
 
 }
